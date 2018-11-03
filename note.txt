@@ -13,3 +13,80 @@
 				{className: 'App'},
 				React.creatElement('h1', null, 'this is my app')
 			);
+
+2- JXS Expressions:
+	a- you can add any expression you want over the render word:
+		class App extends Component {
+  			render() {
+    				const name = "shyma";
+    				return (
+      					<div className="App">
+        					<h1>Contact Manager {name}</h1>
+      					</div>
+    					);
+ 			 	}
+			}
+
+	b- you can add what you want abve the return form javascript logic(if statment ....etc)
+
+3- creat component:
+
+	a- make a folder called component 
+	b- add a file to it called Contact.js, notice firs letter is capital since its a subclass
+	c- import React, {Component} from 'react'
+	d- init the calss:
+		class class-name extends Component{
+			render(){
+				return(
+
+				);
+			}
+		}
+	e- add the export: export default class-name;
+	f- go to App.js and import the sub class to it then add its tag in the JXS;
+
+
+
+4- Functiona Component: 
+	
+	a-make Header.js file in the component folder
+	b- add the setup to it:
+		import React from 'react';
+
+		const Header = () => {
+    			return (
+        			<div>
+            				<h1>Contact Manager</h1>
+        			</div>
+   			 )
+		}
+
+		export default Header;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
