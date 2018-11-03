@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
+    const {title} = props;
     return (
         <div>
-            <h1>Contact Manager</h1>
+            <h1>{title}</h1>
+            <h2></h2>
         </div>
     )
 }
