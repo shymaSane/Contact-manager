@@ -1,0 +1,15 @@
+1- JXS -> javascript extension that allows us to put html inside of javascript.
+	
+	a-some of rules need to follow:
+		1- you cant use class attribute insted you should use className.
+		2- you can't use for attribute instead you should use htmlFor.
+		3- when use a tage without ending tage like input, you need to keep the slash at the end of it 
+		<input type='text' /> and not <iput type='text' >
+		do <br /> and not <br>.
+		4- when return you need to return single parent element aka one div.
+		5- all this jxs is instead of:
+			return Recat.creatElement(
+				'div',
+				{className: 'App'},
+				React.creatElement('h1', null, 'this is my app')
+			);
