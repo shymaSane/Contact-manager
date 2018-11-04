@@ -63,6 +63,57 @@
 
 		export default Header;
 
+5-Props:
+
+	a- Short cut for proprties
+	b- pass them in the component as attributes, head to App.js and add props:
+		<Contact value="contact manager" />
+	c- go to the Contact sub class and pass props in the class as following:
+		class Contact extends Component {
+    			render(props) {
+       				 // object deconstruction 
+       				 const {name, email, phone} = this.props;
+        				return (
+            					<div>
+                					<h4>{name}</h4>
+                					<ul>
+                   						 <li>Email: {email}</li>
+                   						 <li>Phone Number: {phone}</li>
+                					</ul>
+            					</div>
+      					  );
+   				 }
+			} 
+	d- if we have functional component then we call porps as {props.title} 
+	e- if we have class component then we call props as {this.props.title}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
