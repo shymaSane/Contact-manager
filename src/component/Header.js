@@ -1,13 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = (props) => {
     const {title} = props;
     return (
-        <div>
-            <h1>{title}</h1>
-            <h2></h2>
-        </div>
+        <nav className="navbar navbar-expand-sm navbar-dark bg-info mb-3 py-0">
+            <div className="container">
+                <a href="/" className="navbar-brand">{title}</a>
+                <ul className="navbar-nav ml-auto">
+                    <li className="nav-item">
+                        <a href="/" className="nav-link">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     )
 }
 //just in case we didnt pass title

@@ -88,6 +88,77 @@
 	e- if we have class component then we call props as {this.props.title}
 
 
+6- Typechckng with props types:
+
+	a- having default props in case there is no props passing:
+		class-name.defaultProps = {
+			title: 'My App'
+		}
+	
+	b- validate the data thats coming in:
+		1- import poprtypes:
+			import PropTypes from 'prop-types';
+
+		2- add proptypes outside class (prefered):
+			class-name.propTypes = {
+   				name: PropTypes.string.isRequired,
+    				email: PropTypes.string.isRequired,
+    				phone: PropTypes.string.isRequired,
+			}
+
+		3- or add it inside the calss:
+			class Contact extends Component {
+
+    				static propTypes = {
+        				name: PropTypes.string.isRequired,
+        				email: PropTypes.string.isRequired,
+        				phone: PropTypes.string.isRequired,
+    				}
+    				render(props) {
+        				return (
+           					 <div></div>
+        				);
+    				}
+			}
+
+7-Css in React: 
+	
+	a- inline styling: 
+		<h1 style = {{color:'red', fontSize: '50px'}}></h1>
+	b- variable Styling:
+		1- we put this outside the class:
+			const headingStyling = {
+				color: 'green',
+				fontSize: '50px'
+			}
+		2- <h1 style = {headingStyling}></h1>
+	
+	c- specific style sheet for very component:
+		1- add a file called contact.css 
+		2- then import it 
+			import './contact.css'
+
+8- Bootstrap:
+	1-download bootstrap: npm install bootstrap
+	2- import it in the component: import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
