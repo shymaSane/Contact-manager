@@ -5,14 +5,14 @@ class Contact extends Component {
 
     render(props) {
         // object deconstruction 
-        const {name, email, phone} = this.props;
+        const {contact} = this.props;
         return (
             <div className="card my-2">
             <div className="card-body">
-                <h4 className="card-title">{name}</h4>
+                <h4 className="card-title">{contact.name}</h4>
                 <ul className="list-group">
-                <li className="list-group-item">Email: {email}</li>
-                <li className="list-group-item">Phone Number: {phone}</li>
+                <li className="list-group-item">Email: {contact.email}</li>
+                <li className="list-group-item">Phone Number: {contact.phone}</li>
                 </ul>
             </div>
             </div>
@@ -21,9 +21,7 @@ class Contact extends Component {
 }
 
 Contact.propTypes = {
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    contact: PropTypes.object.isRequired
 }
 
 export default Contact;
