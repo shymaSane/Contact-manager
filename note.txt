@@ -141,6 +141,11 @@
 8- Bootstrap:
 	1-download bootstrap: npm install bootstrap
 	2- import it in the component: import 'bootstrap/dist/css/bootstrap.min.css';
+	3- use calssName and not class alone
+
+9- State:
+	a- state works only on class component 
+
 
 
 
