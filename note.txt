@@ -146,6 +146,56 @@
 9- State:
 	a- state works only on class component 
 
+	//TODO
+
+10- changing state froma nother component(from child to parent):
+	a- in the childe component add a function:
+		<button className="btn btn-danger" onClick={this.onDelete}>Delete Contact</button> 
+	b- bind the function in the constructor then call under it 
+	c- add it to the props inside the function call:
+		onDeleteClick(){
+			this.props.deleteClickHandler();
+		}
+	d- add it to the propTypes:
+		class-name.propTypes = {
+			deleteClickHandler: propTypes.func.isRequired
+		}
+	/////////// go th parent now
+	a- go to where the child called and add it as a prop
+		<Child deleteClickHandler={this.deleteContact}/>
+	b- add the function under state upvode render 
+	deleteContact(){
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
