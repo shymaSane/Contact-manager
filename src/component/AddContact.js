@@ -11,6 +11,11 @@ import React, { Component } from 'react'
         this.setState({[e.target.name]: e.target.value})
     }
 
+    onSubmit = (e) =>{
+        e.preventDefault()
+        console.log(e)
+    }
+
   render() {
       const{name, email, phone} = this.state
     return (
@@ -18,19 +23,21 @@ import React, { Component } from 'react'
         <div className="card">
             <div className="card-header">Add Contact</div>
             <div className="card-body">
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" className="form-control" name="name" placeholder="Enter Your Name" required value={name} onChange={this.handelChange}/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" className="form-control" name="email" placeholder="Enter Your Email" required value={email} onChange={this.handelChange}/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="phone number">Phone Number</label>
-                    <input type="number" className="form-control" name="phone" placeholder="Enter Your Phone Number" required value={phone} onChange={this.handelChange}/>
-                </div>
-                <button type="submit" className="btn btn-block btn-light">Submit</button>
+                <form onSubmit={this.onSubmi}>
+                    <div className="form-group">
+                        <label htmlFor="name">Name:</label>
+                        <input type="text" className="form-control" name="name" placeholder="Enter Your Name" required value={name} onChange={this.handelChange}/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email">Email:</label>
+                        <input type="email" className="form-control" name="email" placeholder="Enter Your Email" required value={email} onChange={this.handelChange}/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="phone number">Phone Number</label>
+                        <input type="text" className="form-control" name="phone" placeholder="Enter Your Phone Number" required value={phone} onChange={this.handelChange}/>
+                    </div>
+                    <button type="submit" className="btn btn-block btn-light">Submit</button>
+                </form>
             </div>
         </div>
       </div>
