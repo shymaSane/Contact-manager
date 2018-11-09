@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Consumer} from '../Context';
+import {Consumer} from '../../Context';
 //ro generate ids:
 import uuid from 'uuid';
 
