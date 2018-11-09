@@ -20,16 +20,14 @@ class Contact extends Component {
     }
    
     render() {
-        // object deconstruction 
+        // object deconstruction //
         const {contact} = this.props;
 
         return (
             <Consumer>
                 {value => {
                     const {dispatch} = value;
-                    
                     return(
-                        
                         <div className="card my-2">
                             <div className="card-body">
                                 <h4 className="card-title" style={{cursor:'pointer'}} onClick={this.handleView}>{contact.name} </h4>
@@ -40,8 +38,7 @@ class Contact extends Component {
                                 </ul>: null}
                             </div>
                         </div>
-                    )
-                    
+                    ) 
                 }}
             </Consumer>
             

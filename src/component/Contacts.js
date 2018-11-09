@@ -9,6 +9,7 @@ class Contacts extends Component {
           <Consumer>
             { value => {
                 const {contacts} = value;
+                console.log(contacts)
                 return(
                     <div>
                         {contacts.map((contact) => <Contact
