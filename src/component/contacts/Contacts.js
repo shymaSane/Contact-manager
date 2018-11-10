@@ -11,6 +11,7 @@ class Contacts extends Component {
                 const {contacts} = value;
                 return(
                     <div>
+                        <h3><span className="text-info">Contacts</span> List</h3>
                         {contacts.map((contact) => <Contact
                             key = {contact.id} 
                             contact = {contact} 

@@ -37,7 +37,8 @@ import FormUi from '../ui/FormUi';
             {value => {
                 const {dispatch} = value;
                 return(
-                    <div className="container">
+                    <div>
+                        <h3>Add New <span className="text-info">Contact</span></h3>
                         <div className="card">
                             <div className="card-header">Add Contact</div>
                             <div className="card-body">
