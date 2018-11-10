@@ -28,6 +28,9 @@ import FormUi from '../ui/FormUi';
             phone: ''
         })
 
+        //redirect to home page
+        this.props.history.push('/')
+
     }
 
   render() {
