@@ -12,7 +12,7 @@ const FormUi = ({
   return (
     <div className="form-group">
         <label htmlFor={name}>{label}</label>
-        <input type={type} className="form-control" name={name} placeholder={placeholder} value={value} onChange={onChange}/>
+        <input type={type} className="form-control" name={name} placeholder={placeholder} value={value} onChange={onChange} required/>
     </div>
   )
 }
