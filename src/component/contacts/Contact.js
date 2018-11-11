@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Consumer} from '../../Context'
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class Contact extends Component {
     constructor(){
@@ -41,7 +42,10 @@ class Contact extends Component {
                     return(
                         <div className="card my-2">
                             <div className="card-body">
-                                <h4 className="card-title" style={{cursor:'pointer'}} onClick={this.handleView}>{contact.name} </h4>
+                                <div className="d-flex">
+                                     <h4 className="card-title" style={{cursor:'pointer'}} onClick={this.handleView}>{contact.name} </h4>
+                                     <h6 className=" ml-auto text-info d-inline" style={{cursor:'pointer'}}><Link to={`contact/edit/${contact.id}`}>Edit</Link></h6> 
+                                </div>
                                 {this.state.isToggle?  <ul className="list-group">
                                 <li className="list-group-item">Email: {contact.email}</li>
                                 <li className="list-group-item">Phone Number: {contact.phone}</li>
