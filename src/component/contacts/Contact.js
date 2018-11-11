@@ -34,7 +34,6 @@ class Contact extends Component {
     render() {
         // object deconstruction //
         const {contact} = this.props;
-
         return (
             <Consumer>
                 {value => {

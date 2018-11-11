@@ -25,6 +25,7 @@ import axios from 'axios'
             email,
             phone
         })
+        
     }
 
     onSubmit = async (dispatch, e) =>{
@@ -32,9 +33,12 @@ import axios from 'axios'
         //calling add function
         const {name, email, phone} = this.state;
         const user = {name, email, phone}
+        const {id} = this.props.match.params
         //post the new user first to Json place holder ap first then post it to the ui
-        const res = await axios.post(`https://jsonplaceholder.typicode.com/users`, {user})
-        dispatch({type: 'ADD_CONTACT', payload:{id: res.data.id, ...res.data.user}})
+        const res = await axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, {user})
+        // const data = {id, ...res.data.user}
+        // console.log(data)
+        dispatch({type: 'UPDATE_CONTACT', payload: res.data})
         //clear inputs
         this.setState({
             name: '',
