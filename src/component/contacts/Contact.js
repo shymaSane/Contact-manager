@@ -16,10 +16,17 @@ class Contact extends Component {
         }))
     }
 
-    onDelete = (id, dispatch) => {
+    onDelete = async (id, dispatch) => {
         //delete from the server first then delete frm the dom
-        axios.delete(`https://jsonplaceholder.typicode.com/users/${1}`)
-        .then(res => dispatch({type: 'DELETE_CONTACT', payload: id}))
+        //it wont delete the new added contact because they are not exist in the api 
+        //so we ll only delete from the dom(added try and catch)
+        try{
+            await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+            dispatch({type: 'DELETE_CONTACT', payload: id})
+        } catch (e){
+            dispatch({type: 'DELETE_CONTACT', payload: id})
+        }
+        
        
     }
    

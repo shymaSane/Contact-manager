@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Consumer} from '../../Context';
 //to generate ids:
-import uuid from 'uuid';
 import FormUi from '../ui/FormUi';
 import axios from 'axios'
 
@@ -17,14 +16,14 @@ import axios from 'axios'
         this.setState({[e.target.name]: e.target.value})
     }
 
-    onSubmit = (dispatch, e) =>{
+     onSubmit = async (dispatch, e) =>{
         e.preventDefault();
         //calling add function
         const {name, email, phone} = this.state;
         const user = {name, email, phone}
         //post the new user first to Json place holder ap first then post it to the ui
-        axios.post(`https://jsonplaceholder.typicode.com/users`, {user})
-        .then(res => dispatch({type: 'ADD_CONTACT', payload:{id: res.data.id, ...res.data.user}}))
+        const res = await axios.post(`https://jsonplaceholder.typicode.com/users`, {user})
+        dispatch({type: 'ADD_CONTACT', payload:{id: res.data.id, ...res.data.user}})
         //clear inputs
         this.setState({
             name: '',
