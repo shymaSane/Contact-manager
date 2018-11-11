@@ -3,6 +3,7 @@ import {Consumer} from '../../Context';
 //to generate ids:
 import uuid from 'uuid';
 import FormUi from '../ui/FormUi';
+import axios from 'axios'
 
  class AddContact extends Component {
     state={
@@ -20,7 +21,10 @@ import FormUi from '../ui/FormUi';
         e.preventDefault();
         //calling add function
         const {name, email, phone} = this.state;
-        dispatch({type: 'ADD_CONTACT', payload:{id: uuid(), name, email, phone}})
+        const user = {name, email, phone}
+        //post the new user first to Json place holder ap first then post it to the ui
+        axios.post(`https://jsonplaceholder.typicode.com/users`, {user})
+        .then(res => dispatch({type: 'ADD_CONTACT', payload:{id: res.data.id, ...res.data.user}}))
         //clear inputs
         this.setState({
             name: '',
