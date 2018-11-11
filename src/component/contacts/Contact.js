@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Consumer} from '../../Context'
+import axios from 'axios';
 
 class Contact extends Component {
     constructor(){
@@ -16,7 +17,10 @@ class Contact extends Component {
     }
 
     onDelete = (id, dispatch) => {
-       dispatch({type: 'DELETE_CONTACT', payload: id})
+        //delete from the server first then delete frm the dom
+        axios.delete(`https://jsonplaceholder.typicode.com/users/${1}`)
+        .then(res => dispatch({type: 'DELETE_CONTACT', payload: id}))
+       
     }
    
     render() {
