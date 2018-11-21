@@ -1,5 +1,5 @@
 
-import {GET_CONTACTS} from '../actions/types'
+import {GET_CONTACTS} from '../actions/type'
 
 //each reducers has its intial state
 const initialState = {
