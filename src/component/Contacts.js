@@ -1,34 +1,10 @@
 import React, { Component } from 'react';
-import Contact from './Contact.js'
+import Contact from './Contact.js';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types'
 
 class Contacts extends Component {
-    constructor(){
-        super();
-        this.state = {
-            contacts:
-            [
-                {
-                    id:1,
-                    name: 'shyma al sane',
-                    email: 'shyma@gmail.com',
-                    phone: '444-444-444'
-                },
-                {
-                    id:2,
-                    name: 'jumana al sane',
-                    email: 'jumana@gmail.com',
-                    phone: '444-444-444'
-                },
-                {
-                    id:3,
-                    name: 'rahma al sane',
-                    email: 'rahma@gmail.com',
-                    phone: '444-444-444'
-                }
-            ]
-        }
-    }
-
+  
 
     deleteContact(id){
         const {contacts} = this.state;
@@ -40,7 +16,7 @@ class Contacts extends Component {
   
 
   render() {
-      const {contacts} = this.state;
+      const {contacts} = this.props;
     return (
       <div>
           {
@@ -55,4 +31,12 @@ class Contacts extends Component {
   }
 }
 
-export default Contacts
+// it maps the state variables from your store to the props that you specify
+const mapStateToProps = (state) =>({
+    //contact is what we called it rootReducers
+    contacts: state.contact.contacts
+})
+
+
+//in connect we put first any thing we want to map from store to this component, second anything we want to dispatch 
+export default connect(mapStateToProps)(Contacts);
