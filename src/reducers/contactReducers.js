@@ -1,5 +1,5 @@
 
-import {GET_CONTACTS} from '../actions/type'
+import {GET_CONTACTS, ADD_CONTACT, DELETE_CONTACT} from '../actions/type'
 
 //each reducers has its intial state
 const initialState = {
@@ -30,6 +30,16 @@ export default function(state = initialState, action){
         case GET_CONTACTS:
             return {
                 ...state
+            }
+        case ADD_CONTACT:
+            return {
+                ...state,
+                contacts: [...state, ...action.payload]
+            }
+        case DELETE_CONTACT:
+            return{
+                ...state,
+                contacts: state.contacts.filter(contact =>  contact.id !== action.payload)
             }
         default:
             return state
